@@ -1,95 +1,13 @@
-import { useState } from "react";
-
-export default function LandingPage() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 max-w-6xl mx-auto w-full">
-        <h1 className="text-2xl font-bold">BookMeTT</h1>
-        <button className="px-4 py-2 bg-black text-white rounded-xl">Sign In</button>
-      </nav>
-
-      {/* Hero Section */}
-      <header className="flex flex-col items-center text-center mt-20 px-6">
-        <h2 className="text-5xl font-extrabold leading-tight max-w-3xl">
-          Accept Online Bookings. Reduce No-Shows. Grow Your Business.
-        </h2>
-        <p className="text-lg text-gray-600 max-w-xl mt-4">
-          A simple booking system built for barbers, salons, nail techs, and service providers in Trinidad & Tobago.
-        </p>
-
-        {!submitted ? (
-          <form
-            onSubmit={handleSubmit}
-            className="mt-8 flex flex-col sm:flex-row gap-3 w-full max-w-md"
-          >
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-xl border border-gray-300"
-              placeholder="Enter your email to join the early access list"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-black text-white rounded-xl shadow"
-            >
-              Join Waitlist
-            </button>
-          </form>
-        ) : (
-          <p className="mt-8 text-green-600 font-semibold text-lg">
-            Thank you! You're officially on the early-access list.
-          </p>
-        )}
-      </header>
-
-      {/* Features Section */}
-      <section className="mt-28 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-        <div className="bg-white p-8 rounded-2xl shadow">
-          <h3 className="text-xl font-bold mb-2">Online Booking Page</h3>
-          <p className="text-gray-600">Let clients book appointments 24/7 using your custom link.</p>
-        </div>
-        <div className="bg-white p-8 rounded-2xl shadow">
-          <h3 className="text-xl font-bold mb-2">Automatic Reminders</h3>
-          <p className="text-gray-600">Reduce no-shows with SMS + WhatsApp reminders.</p>
-        </div>
-        <div className="bg-white p-8 rounded-2xl shadow">
-          <h3 className="text-xl font-bold mb-2">Manage Your Schedule</h3>
-          <p className="text-gray-600">See all bookings in a clean, simple dashboard.</p>
-        </div>
-      </section>
-
-      {/* Pricing Preview */}
-      <section className="mt-28 bg-black text-white py-20 px-6 text-center">
-        <h3 className="text-4xl font-bold mb-6">Simple Pricing</h3>
-        <p className="text-gray-300 max-w-xl mx-auto mb-10">Launch special: first 10 businesses get 2 months free.</p>
-
-        <div className="max-w-md mx-auto bg-white text-black p-10 rounded-2xl shadow">
-          <h4 className="text-2xl font-bold mb-4">Starter Plan</h4>
-          <p className="text-5xl font-extrabold mb-4">TTD $60<span className="text-lg">/month</span></p>
-          <ul className="text-left text-gray-700 space-y-2 mb-6">
-            <li>✔ Online booking page</li>
-            <li>✔ Automatic reminders</li>
-            <li>✔ Unlimited appointments</li>
-          </ul>
-          <button className="px-6 py-3 bg-black text-white rounded-xl w-full">Get Early Access</button>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="mt-20 py-10 text-center text-gray-500">
-        © {new Date().getFullYear()} BookMeTT. All rights reserved.
-      </footer>
-    </div>
-  );
-}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bookmett-landing</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
